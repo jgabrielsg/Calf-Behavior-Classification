@@ -3,7 +3,7 @@
 ---
 
 Participants:
-- João Gabriel - FGV (EMAp)
+- João Gabriel Machado - FGV (EMAp)
 - Gustavo Tironi - FGV (EMAp)
 
 ---
