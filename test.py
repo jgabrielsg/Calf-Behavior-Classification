@@ -12,7 +12,6 @@ def get_colisions(parquet_path):
     )
     
     # Count collisions (checks if there is more than one calf, or if it was not 25hz at certain points)
-    # 25hz -> 40000 microseconds
     colisions = df.filter(pl.col("delta_t") <= pl.duration(microseconds=38500))
     
     total = len(df)

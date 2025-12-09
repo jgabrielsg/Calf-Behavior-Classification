@@ -1,7 +1,5 @@
 import pandas as pd
-import numpy as np
 
-# --- CONFIGURAÇÃO ---
 PARQUET_PATH = 'WindowedCalf.parquet'
 
 def inspect_dataset(file_path):
@@ -40,7 +38,7 @@ def inspect_dataset(file_path):
     print(f"• Tamanho do Array acc_z: {len_z} pontos ")
     print(f"• Tipo de dado nos arrays: {type(sample_row['acc_x'])}")
     
-    # 3. Verificação das Features TSFEL
+    # Verificação das Features TSFEL
     standard_cols = ['dateTime', 'calf_id', 'acc_x', 'acc_y', 'acc_z', 'label']
     tsfel_cols = [c for c in df.columns if c not in standard_cols]
     
@@ -56,9 +54,9 @@ def inspect_dataset(file_path):
     else:
         ...
 
-    # 4. Visualização de Exemplo
+    # Visualização de Exemplo
     print("\n" + "-"*60)
-    print("👀 VISUALIZAÇÃO DE 3 LINHAS ALEATÓRIAS")
+    print("VISUALIZAÇÃO DE 3 LINHAS ALEATÓRIAS")
     print("-" * 60)
     
     # Configuração para o Pandas não cortar o texto do array no print
@@ -66,11 +64,8 @@ def inspect_dataset(file_path):
     pd.set_option('display.max_columns', 10) # Mostra poucas colunas pra caber na tela
     
     sample_df = df.sample(3)
-    # Mostra colunas principais + 2 features TSFEL (se existirem)
     cols_to_show = ['dateTime', 'label', 'acc_x'] + tsfel_cols[:2]
     
     print(sample_df[cols_to_show])
 
-# --- Executa ---
-import os
 inspect_dataset(PARQUET_PATH)
