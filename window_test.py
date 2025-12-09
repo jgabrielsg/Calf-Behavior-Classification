@@ -1,5 +1,4 @@
 import pandas as pd
-
 PARQUET_PATH = 'WindowedCalf.parquet'
 
 def inspect_dataset(file_path):
