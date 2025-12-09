@@ -1,3 +1,6 @@
 .venv/
 *.parquet
 AcTBeCalf.csv
+*.pth
+*.json
+*.npz
